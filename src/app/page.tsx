@@ -1,13 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import type { User } from '@supabase/supabase-js'
 import { supabase } from '@/lib/supabase'
 
 export default function AuthPage() {
-  const [email, setEmail] = useState('')
+  const [email, setEmail]       = useState('')
   const [password, setPassword] = useState('')
-  const [user, setUser]     = useState<any>(null)
-  const [message, setMessage] = useState('')
+  const [user, setUser]         = useState<User | null>(null)
+  const [message, setMessage]   = useState('')
 
   // Subscribe to auth changes
   useEffect(() => {
